@@ -72,7 +72,8 @@ class SchoolManagementSystem(QMainWindow):
             "Transport Management": self.show_transport_management,
             "Parent & Student Portal": self.show_parent_portal,
             "Events & Calendar": self.show_events_calendar,
-            "Reports & Analytics": self.show_reports_analytics
+            "Reports & Analytics": self.show_reports_analytics,
+            "SETTINGS":self.show_settings
         }
 
         for module in self.modules.keys():
@@ -159,6 +160,17 @@ class SchoolManagementSystem(QMainWindow):
         card_layout.addWidget(value_label, alignment=Qt.AlignCenter)
 
         return card
+    
+
+
+
+    def show_settings(self):
+        self.clear_layout(self.content_layout)
+        label = QLabel("SETTINGS")
+        label.setFont(QFont("Arial", 16))
+        label.setStyleSheet("color: red;")
+        self.content_layout.addWidget(label, alignment=Qt.AlignCenter)
+    
 
     def create_bar_graph(self):
         figure, ax = plt.subplots()
